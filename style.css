@@ -22,6 +22,13 @@
     grid-template-columns:repeat(18,1fr);
 
 }
+#scoreBox{
+    position:absolute;
+    top: 9px;
+    right:200px;
+    font-size: 39px;
+    font-weight:bold;
+}
 .head{
     background: linear-gradient(red,yellow);
     border: 2px solid purple;
@@ -34,7 +41,7 @@
     border-radius: 12px;
 }
 .food{
-    background: liner-gradient(rgb(105, 4, 38),purple);
+    background: linear-gradient(rgb(105, 4, 38),purple);
     border: .25vmin solid rgb(245, 59, 59);
     border-radius: 8px;
 }

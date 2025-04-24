@@ -29,6 +29,13 @@
     font-size: 39px;
     font-weight:bold;
 }
+#hiscoreBox{
+    position:absolute;
+    top: 59px;
+    right:140px;
+    font-size: 39px;
+    font-weight:bold;
+}
 .head{
     background: linear-gradient(red,yellow);
     border: 2px solid purple;

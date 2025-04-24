@@ -31,6 +31,7 @@ function isCollide(snake){
    if(snake[0].x >=18 || snake[0].x <=0 || snake[0].y>=18 || snake[0].y <=0){
     return true;
    }
+   return false;
 }
 function gameEngine(){
     //part 1:updating the snake arr
@@ -49,9 +50,10 @@ function gameEngine(){
          score += 1;
          if(score>hiscoreval){
             hiscoreval = score;
-            localStorage.setItem("hiscore",JSON.stringify(hiscoreval))
-         }
-         scoreBox.innerHTML= "score:" + score;
+            localStorage.setItem("hiscore", JSON.stringify(hiscoreval));
+            hiscoreBox.innerHTML = "HiScore: " + hiscoreval;
+        }
+         scoreBox.innerHTML= "Score:" + score;
         snakeArr.unshift({x: snakeArr[0].x + inputDir.x, y: snakeArr[0].y + inputDir.y});
         let a = 2;
         let b = 16;
@@ -98,10 +100,11 @@ function gameEngine(){
 let hiscore = localStorage.getItem("hiscore");
 if(hiscore === null){
     hiscoreval = 0;
-    localStorage.setItem("hiscore",JSON.stringify(hiscore))
+    localStorage.setItem("hiscore", JSON.stringify(hiscoreval))
 }
 else{
-    hiscoreBox.innerHTML = "HiScore" + hiscore;
+    hiscoreval = JSON.parse(hiscore);
+    hiscoreBox.innerHTML = "HiScore: " + hiscore;
 }
 window.requestAnimationFrame(main);
 window.addEventListener('keydown', e =>{
